@@ -66,6 +66,8 @@
 </head>
 <body class="relative min-h-screen text-brandDark font-sans selection:bg-brandPink selection:text-white" oncontextmenu="return false;">
 
+    <!-- Background Image Layer with Reduced Opacity -->
+    <div class="fixed inset-0 -z-20 bg-cover bg-center bg-no-repeat opacity-20" style="background-image: url('https://placehold.co/1920x1080/fce7f3/db2777?text=Donut+Table');"></div>
     <!-- Pastel Overlay Layer -->
     <div id="themeOverlay" class="fixed inset-0 -z-10 bg-gradient-to-br from-pastelPink via-pastelBlue to-pastelPurple transition-colors duration-500 opacity-80"></div>
 
@@ -105,6 +107,7 @@
     </nav>
 
     <header class="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+        <div class="absolute inset-0 -z-10 opacity-30 bg-[radial-gradient(#ff6584_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <h1 class="font-serif font-extrabold text-slate-900 tracking-tight leading-tight mb-6 max-w-4xl mx-auto text-[36px]">
             Artisanal Donuts infused with Indian Flavors
         </h1>
@@ -472,9 +475,7 @@
             { name: 'Ube Malasada', category: 'Bingeworthy', desc: 'Hawaiian sugar donut filled with vivid purple ube cream.' },
             { name: 'Mango Custard', category: 'Bingeworthy', desc: 'Rich mango infused silky custard filling.' },
             { name: 'Chocolate Pudding', category: 'Bingeworthy', desc: 'Dark fudge pudding core sprinkled with cocoa powder.' },
-            { name: 'Boston Creme', category: 'Bingeworthy', desc: 'Vanilla bean bavarian cream coated in dark chocolate.' },
-            { name: 'Jam filled', category: 'Bingeworthy', desc: 'Classic fluffy dough stuffed with sweet fruit jam.' },
-            { name: 'Strawberry Cheesecake', category: 'Bingeworthy', desc: 'Cream cheese filling topped with strawberry drizzle.' }
+            { name: 'Boston Creme', category: 'Bingeworthy', desc: 'Vanilla bean bavarian cream coated in dark chocolate.' }
         ];
 
         let cart = [];
