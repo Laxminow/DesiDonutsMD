@@ -1,9 +1,10 @@
+<!-- ...ရှင် -->
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DesiDonutsMD</title>
+    <title>DesiDonutsMD - Artisanal Indian Fusion Donuts</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter & Playfair Display -->
@@ -33,13 +34,13 @@
         }
     </script>
     <style>
-        /* Copyright protection for images and vector graphics */
+        /* Protection for web graphics */
         .protected-img {
             pointer-events: none;
             user-select: none;
             -webkit-user-drag: none;
         }
-        /* Custom scrollbar */
+        /* Custom styled scrollbars */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -53,6 +54,7 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+        /* Floating Canvas Sprinkles Effect Overlay */
         canvas.sprinkles-canvas {
             position: fixed;
             top: 0;
@@ -66,12 +68,14 @@
 </head>
 <body class="relative min-h-screen text-brandDark font-sans selection:bg-brandPink selection:text-white" oncontextmenu="return false;">
 
-    <!-- Pastel Overlay Layer -->
+    <!-- Dynamic Pastel Background Overlay -->
     <div id="themeOverlay" class="fixed inset-0 -z-10 bg-gradient-to-br from-pastelPink via-pastelBlue to-pastelPurple transition-colors duration-500 opacity-80"></div>
 
+    <!-- Interactive Canvas Layer for Floating Sprinkles Animation -->
     <canvas id="sprinklesCanvas" class="sprinkles-canvas"></canvas>
 
-    <nav class="sticky top-0 z-40 bg-white/80 backdrop-blur-md shadow-sm border-b border-white/40">
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 bg-white/85 backdrop-blur-md shadow-sm border-b border-white/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-400 to-purple-400 flex items-center justify-center text-white shadow-md">
@@ -81,20 +85,20 @@
             </div>
             
             <div class="flex items-center space-x-4">
-                <!-- Theme Switcher -->
+                <!-- Theme Switcher Controls -->
                 <div class="hidden sm:flex items-center space-x-2 bg-white/60 p-1.5 rounded-full border border-slate-200 shadow-inner">
-                    <button onclick="setTheme('pastelPink')" class="w-6 h-6 rounded-full bg-pink-200 hover:ring-2 ring-pink-400 transition" title="Pastel Pink"></button>
-                    <button onclick="setTheme('pastelBlue')" class="w-6 h-6 rounded-full bg-sky-200 hover:ring-2 ring-sky-400 transition" title="Pastel Blue"></button>
-                    <button onclick="setTheme('pastelYellow')" class="w-6 h-6 rounded-full bg-amber-200 hover:ring-2 ring-amber-400 transition" title="Pastel Yellow"></button>
-                    <button onclick="setTheme('pastelPurple')" class="w-6 h-6 rounded-full bg-purple-200 hover:ring-2 ring-purple-400 transition" title="Pastel Purple"></button>
+                    <button onclick="setTheme('pastelPink')" class="w-6 h-6 rounded-full bg-pink-200 hover:ring-2 ring-pink-400 transition" title="Pastel Pink Theme"></button>
+                    <button onclick="setTheme('pastelBlue')" class="w-6 h-6 rounded-full bg-sky-200 hover:ring-2 ring-sky-400 transition" title="Pastel Blue Theme"></button>
+                    <button onclick="setTheme('pastelYellow')" class="w-6 h-6 rounded-full bg-amber-200 hover:ring-2 ring-amber-400 transition" title="Pastel Yellow Theme"></button>
+                    <button onclick="setTheme('pastelPurple')" class="w-6 h-6 rounded-full bg-purple-200 hover:ring-2 ring-purple-400 transition" title="Pastel Purple Theme"></button>
                 </div>
 
-                <!-- Instagram Link -->
+                <!-- Social Instagram Link -->
                 <a href="https://instagram.com/desidonutsmd?exln=MWtkbXVvMDB2enE2ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gradient-to-tr from-amber-400 via-rose-500 to-purple-600 text-white flex items-center justify-center hover:opacity-90 transition shadow-sm" title="Follow us on Instagram">
                     <i class="fa-brands fa-instagram text-lg"></i>
                 </a>
 
-                <!-- Preorder Direct Button opening Cart Modal -->
+                <!-- Shopping Preorder Cart Button -->
                 <button onclick="toggleCartModal(true)" class="relative bg-white hover:bg-slate-50 border border-slate-200 text-slate-700 px-4 py-2.5 rounded-full shadow-sm flex items-center space-x-2 font-medium transition active:scale-95 cursor-pointer">
                     <i class="fa-solid fa-shopping-bag text-pink-500 text-lg"></i>
                     <span class="hidden md:inline">Preorder Box</span>
@@ -104,8 +108,13 @@
         </div>
     </nav>
 
+    <!-- Header Hero Banner -->
     <header class="relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-        <h1 class="font-serif font-extrabold text-slate-900 tracking-tight leading-tight mb-6 max-w-4xl mx-auto text-[36px]">
+        <div class="inline-flex items-center space-x-2 bg-pink-100/80 text-pink-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-6 shadow-sm border border-pink-200">
+            <i class="fa-solid fa-seedling"></i>
+            <span>Freshly Baked Daily, Always Egg-free</span>
+        </div>
+        <h1 class="font-serif font-extrabold text-slate-900 tracking-tight leading-tight mb-6 max-w-4xl mx-auto text-[36px] sm:text-[48px]">
             Artisanal Donuts infused with Indian Flavors
         </h1>
         <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-8 font-normal">
@@ -118,6 +127,7 @@
         </div>
     </header>
 
+    <!-- Pickup Location & Weekend Picker Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div class="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-md border border-white flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex items-center space-x-4">
@@ -131,14 +141,16 @@
                 </div>
             </div>
             
-            <div class="relative">
-                <div onclick="openWeekendCalendarModal()" class="flex items-center space-x-3 bg-white hover:bg-slate-50 p-3.5 rounded-2xl border border-slate-200 shadow-sm cursor-pointer transition active:scale-98">
-                    <div class="w-10 h-10 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center">
-                        <i class="fa-solid fa-calendar-days text-lg"></i>
-                    </div>
-                    <div>
-                        <span class="block text-xs font-semibold text-slate-500 uppercase">Select Pickup Date</span>
-                        <span id="selectedPickupDateDisplay" class="font-bold text-slate-900 text-sm">Select Weekend Date</span>
+            <div class="relative w-full md:w-auto">
+                <div onclick="openWeekendCalendarModal()" class="flex items-center justify-between space-x-3 bg-white hover:bg-slate-50 p-3.5 rounded-2xl border border-slate-200 shadow-sm cursor-pointer transition active:scale-98">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-xl bg-pink-100 text-pink-600 flex items-center justify-center">
+                            <i class="fa-solid fa-calendar-days text-lg"></i>
+                        </div>
+                        <div>
+                            <span class="block text-xs font-semibold text-slate-500 uppercase">Select Pickup Date</span>
+                            <span id="selectedPickupDateDisplay" class="font-bold text-slate-900 text-sm">Select Weekend Date</span>
+                        </div>
                     </div>
                     <i class="fa-solid fa-chevron-down text-slate-400 text-xs ml-2"></i>
                 </div>
@@ -146,6 +158,7 @@
         </div>
     </section>
 
+    <!-- Packages Section -->
     <section id="menuSection" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div class="text-center mb-10">
             <h2 class="text-3xl font-serif font-bold text-slate-900 mb-2">Our Preorder Boxes</h2>
@@ -153,28 +166,30 @@
         </div>
 
         <div id="packagesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Dynamically populated via JS -->
+            <!-- Dynamically populated via JavaScript -->
         </div>
     </section>
 
+    <!-- Flavor Menu Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div class="text-center mb-8">
             <h2 class="text-3xl font-serif font-bold text-slate-900 mb-2">Explore Our Flavors</h2>
             <p class="text-slate-600 mb-6">Handcrafted weekly specials with fusion flair</p>
             
+            <!-- Category Filter Buttons -->
             <div class="flex flex-wrap justify-center gap-2">
                 <button onclick="filterCategory('all')" id="btn-all" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition bg-pink-500 text-white shadow-sm cursor-pointer">All Flavors</button>
                 <button onclick="filterCategory('Classic')" id="btn-Classic" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition text-slate-600 hover:text-slate-900 bg-white/80 border border-slate-200 cursor-pointer">Classic</button>
                 <button onclick="filterCategory('Signature')" id="btn-Signature" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition text-slate-600 hover:text-slate-900 bg-white/80 border border-slate-200 cursor-pointer">Signature</button>
-                <button onclick="filterCategory('Bingeworthy')" id="btn-Bingeworthy" class="cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition text-slate-600 hover:text-slate-900 bg-white/80 border border-slate-200 cursor-pointer">Bingeworthy</button>
             </div>
         </div>
 
         <div id="donutGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            <!-- Dynamically populated via JS -->
+            <!-- Dynamically populated via JavaScript -->
         </div>
     </section>
 
+    <!-- Allergen & Payment Guidelines Section -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
         <div class="bg-amber-50/90 backdrop-blur-md p-5 rounded-2xl shadow-sm border border-amber-200/60 mb-6 flex items-start space-x-3 text-amber-900">
             <div class="w-9 h-9 rounded-xl bg-amber-200/70 text-amber-700 flex items-center justify-center shrink-0 mt-0.5 font-bold text-base shadow-inner">
@@ -183,7 +198,7 @@
             <div>
                 <h4 class="font-bold text-sm text-amber-950 mb-0.5">Freshness & Enjoyment Notice</h4>
                 <p class="text-xs sm:text-sm text-amber-800 leading-relaxed font-medium">
-                    Our donuts are made fresh daily without artificial preservatives. For the best flavor and texture, we recommend eating them on the day they are purchased.
+                    Our donuts are made fresh daily without artificial preservatives. For the best flavor and texture, we recommend eating them on the day they are purchased. <strong>Please note that this is not a storefront; orders are for weekend preorders only. Preorders close on Thursday evening.</strong>
                 </p>
             </div>
         </div>
@@ -202,6 +217,9 @@
                     <span class="bg-rose-50 text-rose-700 text-xs font-semibold px-3 py-1 rounded-full border border-rose-100">Dairy</span>
                     <span class="bg-rose-50 text-rose-700 text-xs font-semibold px-3 py-1 rounded-full border border-rose-100">Tree Nuts</span>
                     <span class="bg-rose-50 text-rose-700 text-xs font-semibold px-3 py-1 rounded-full border border-rose-100">Peanuts</span>
+                    <span class="bg-rose-50 text-rose-700 text-xs font-semibold px-3 py-1 rounded-full border border-rose-100">Pistachios</span>
+                    <span class="bg-rose-50 text-rose-700 text-xs font-semibold px-3 py-1 rounded-full border border-rose-100">Coconut</span>
+                    <span class="bg-rose-50 text-rose-700 text-xs font-semibold px-3 py-1 rounded-full border border-rose-100">May contain other nuts like Cashews, Almonds</span>
                 </div>
             </div>
 
@@ -220,74 +238,7 @@
         </div>
     </section>
 
-    <!-- Instagram & QR Code Connect Section -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div class="bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-purple-500/10 backdrop-blur-md rounded-3xl p-8 border border-white shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
-            <div class="max-w-xl text-center md:text-left">
-                <div class="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-sm">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span>Connect On Instagram</span>
-                </div>
-                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-slate-900 mb-3">Follow @DESIDONUTSMD</h3>
-                <p class="text-slate-600 text-sm sm:text-base leading-relaxed mb-6">
-                    Scan our QR code or click below to check out our latest weekend specials, behind-the-scenes donut crafting, and customer favorites!
-                </p>
-                <a href="https://instagram.com/desidonutsmd?exln=MWtkbXVvMDB2enE2ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:opacity-95 text-white font-bold px-6 py-3 rounded-full shadow-md transition transform hover:-translate-y-0.5">
-                    <i class="fa-brands fa-instagram text-lg"></i>
-                    <span>Visit Instagram Profile</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
-                </a>
-            </div>
-
-            <!-- Styled QR Code Card -->
-            <div class="bg-white p-6 rounded-3xl shadow-xl border border-amber-200/60 flex flex-col items-center justify-center text-center shrink-0 w-64">
-                <a href="https://instagram.com/desidonutsmd?exln=MWtkbXVvMDB2enE2ZQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="group block">
-                    <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100 group-hover:scale-105 transition transform duration-200">
-                        <svg viewBox="0 0 200 200" class="w-48 h-48 protected-img" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Background -->
-                            <rect width="200" height="200" fill="#ffffff" rx="12"/>
-                            
-                            <!-- Corner Position Patterns (Golden/Amber) -->
-                            <rect x="15" y="15" width="45" height="45" rx="10" fill="none" stroke="#D97706" stroke-width="7"/>
-                            <rect x="27.5" y="27.5" width="20" height="20" rx="5" fill="#D97706"/>
-                            
-                            <rect x="140" y="15" width="45" height="45" rx="10" fill="none" stroke="#D97706" stroke-width="7"/>
-                            <rect x="152.5" y="27.5" width="20" height="20" rx="5" fill="#D97706"/>
-                            
-                            <rect x="15" y="140" width="45" height="45" rx="10" fill="none" stroke="#D97706" stroke-width="7"/>
-                            <rect x="27.5" y="152.5" width="20" height="20" rx="5" fill="#D97706"/>
-
-                            <!-- Center Instagram Logo Symbol -->
-                            <rect x="75" y="75" width="50" height="50" rx="12" fill="none" stroke="#D97706" stroke-width="6"/>
-                            <circle cx="100" cy="100" r="13" fill="none" stroke="#D97706" stroke-width="5"/>
-                            <circle cx="114" cy="86" r="3" fill="#D97706"/>
-
-                            <!-- Stylized QR Code Matrix Dots -->
-                            <g fill="#D97706">
-                                <circle cx="70" cy="20" r="2.5"/><circle cx="85" cy="20" r="2.5"/><circle cx="100" cy="20" r="2.5"/><circle cx="115" cy="20" r="2.5"/><circle cx="125" cy="25" r="2.5"/>
-                                <circle cx="75" cy="32" r="2.5"/><circle cx="90" cy="32" r="2.5"/><circle cx="110" cy="32" r="2.5"/><circle cx="130" cy="35" r="2.5"/>
-                                <circle cx="70" cy="45" r="2.5"/><circle cx="85" cy="45" r="2.5"/><circle cx="105" cy="45" r="2.5"/><circle cx="120" cy="45" r="2.5"/>
-                                <circle cx="75" cy="58" r="2.5"/><circle cx="95" cy="58" r="2.5"/><circle cx="115" cy="58" r="2.5"/><circle cx="130" cy="55" r="2.5"/>
-                                
-                                <circle cx="20" cy="70" r="2.5"/><circle cx="35" cy="70" r="2.5"/><circle cx="50" cy="70" r="2.5"/><circle cx="150" cy="70" r="2.5"/><circle cx="165" cy="70" r="2.5"/><circle cx="180" cy="70" r="2.5"/>
-                                <circle cx="25" cy="85" r="2.5"/><circle cx="40" cy="85" r="2.5"/><circle cx="60" cy="85" r="2.5"/><circle cx="140" cy="85" r="2.5"/><circle cx="160" cy="85" r="2.5"/><circle cx="175" cy="85" r="2.5"/>
-                                <circle cx="20" cy="100" r="2.5"/><circle cx="45" cy="100" r="2.5"/><circle cx="155" cy="100" r="2.5"/><circle cx="170" cy="100" r="2.5"/><circle cx="180" cy="100" r="2.5"/>
-                                <circle cx="30" cy="115" r="2.5"/><circle cx="55" cy="115" r="2.5"/><circle cx="145" cy="115" r="2.5"/><circle cx="165" cy="115" r="2.5"/>
-                                <circle cx="20" cy="128" r="2.5"/><circle cx="40" cy="128" r="2.5"/><circle cx="60" cy="128" r="2.5"/><circle cx="150" cy="128" r="2.5"/><circle cx="175" cy="128" r="2.5"/>
-
-                                <circle cx="70" cy="145" r="2.5"/><circle cx="90" cy="145" r="2.5"/><circle cx="110" cy="145" r="2.5"/><circle cx="125" cy="145" r="2.5"/>
-                                <circle cx="75" cy="158" r="2.5"/><circle cx="100" cy="158" r="2.5"/><circle cx="120" cy="158" r="2.5"/><circle cx="130" cy="158" r="2.5"/>
-                                <circle cx="70" cy="170" r="2.5"/><circle cx="85" cy="170" r="2.5"/><circle cx="105" cy="170" r="2.5"/><circle cx="115" cy="170" r="2.5"/>
-                                <circle cx="80" cy="182" r="2.5"/><circle cx="95" cy="182" r="2.5"/><circle cx="125" cy="182" r="2.5"/>
-                            </g>
-                        </svg>
-                    </div>
-                    <p class="mt-3 text-xs font-extrabold tracking-widest text-amber-600 uppercase font-mono">@DESIDONUTSMD</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer class="bg-white/60 backdrop-blur-md border-t border-slate-200 py-8 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center space-x-3">
@@ -308,8 +259,9 @@
         </div>
     </footer>
 
-    <div id="cartModal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex justify-end">
-        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto">
+    <!-- Preorder Cart Modal Drawer -->
+    <div id="cartModal" onclick="handleCartBackdropClick(event)" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex justify-end">
+        <div class="bg-white w-full max-w-md h-full shadow-2xl flex flex-col justify-between p-6 overflow-y-auto" onclick="event.stopPropagation()">
             <div>
                 <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-100">
                     <h3 class="text-xl font-serif font-bold text-slate-900">Your Preorder Box</h3>
@@ -327,16 +279,7 @@
                 </div>
 
                 <div id="cartItemsList" class="space-y-3 mb-6">
-                    <!-- Populated via JS -->
-                </div>
-
-                <div class="mb-6 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                    <label class="block text-xs font-semibold text-slate-600 mb-1">Have a Promo Code?</label>
-                    <div class="flex space-x-2">
-                        <input type="text" id="couponInput" placeholder="Try '10OFF'" class="flex-1 text-sm bg-white border border-slate-200 rounded-lg px-3 py-1.5 uppercase font-mono tracking-wider focus:outline-none focus:border-pink-500">
-                        <button onclick="applyCoupon()" class="bg-slate-900 hover:bg-slate-800 text-white text-xs px-4 py-1.5 rounded-lg font-medium transition cursor-pointer">Apply</button>
-                    </div>
-                    <p id="couponMsg" class="text-xs mt-1 font-medium hidden"></p>
+                    <!-- Populated via JavaScript -->
                 </div>
             </div>
 
@@ -364,21 +307,9 @@
         </div>
     </div>
 
-    <div id="msgModal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-sm w-full p-6 text-center shadow-2xl border border-slate-100">
-            <div id="msgIconContainer" class="w-14 h-14 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4 text-2xl text-emerald-600">
-                <i id="msgIcon" class="fa-solid fa-check"></i>
-            </div>
-            <h3 id="msgTitle" class="text-xl font-serif font-bold text-slate-900 mb-2">Notice</h3>
-            <p id="msgBody" class="text-slate-600 text-sm mb-6">Message content goes here.</p>
-            <button onclick="closeMsgModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white py-2.5 rounded-xl font-medium text-sm transition cursor-pointer">
-                Got It
-            </button>
-        </div>
-    </div>
-
+    <!-- Weekend Calendar Modal Picker -->
     <div id="weekendCalendarModal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100 animate-in fade-in zoom-in duration-200">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl border border-slate-100">
             <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-100">
                 <div>
                     <h3 class="text-lg font-serif font-bold text-slate-900">Select Pickup Weekend</h3>
@@ -399,7 +330,7 @@
                 <div>Su</div><div>Mo</div><div>Tu</div><div>We</div><div>Th</div><div>Fr</div><div>Sa</div>
             </div>
             <div id="calendarDaysGrid" class="grid grid-cols-7 gap-1 text-center">
-                <!-- Dynamically Populated Days -->
+                <!-- Dynamically Populated Calendar Grid -->
             </div>
 
             <div class="mt-4 pt-3 border-t border-slate-100 text-xs text-slate-500 flex items-center justify-between">
@@ -409,7 +340,9 @@
         </div>
     </div>
 
+    <!-- Application Logic Script -->
     <script>
+        // Vector SVG Generator for Artisanal Donut Clipart
         function getVectorClipart(name) {
             const svgHeader = `<svg viewBox="0 0 200 200" class="w-full h-full protected-img filter drop-shadow-md" xmlns="http://www.w3.org/2000/svg">`;
             const svgFooter = `</svg>`;
@@ -417,81 +350,70 @@
             switch(name) {
                 case 'Classic':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Glaze -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 130 95 112 Q 75 128 55 108 Q 35 120 28 100 A 72 72 0 0 1 100 28 Z" fill="#fef08a" stroke="#fde047" stroke-width="3"/>
-                        <!-- Sprinkles -->
                         <rect x="70" y="50" width="10" height="4" rx="2" fill="#ef4444" transform="rotate(20 70 50)"/>
                         <rect x="120" y="55" width="10" height="4" rx="2" fill="#3b82f6" transform="rotate(-30 120 55)"/>
                         <rect x="140" y="90" width="10" height="4" rx="2" fill="#10b981" transform="rotate(45 140 90)"/>
                         <rect x="55" y="105" width="10" height="4" rx="2" fill="#ec4899" transform="rotate(-15 55 105)"/>
                         <rect x="85" y="40" width="10" height="4" rx="2" fill="#8b5cf6" transform="rotate(60 85 40)"/>
-                        <!-- Highlights -->
                         <ellipse cx="75" cy="50" rx="12" ry="5" fill="#ffffff" opacity="0.6" transform="rotate(-30 75 50)"/>
+                    ${svgFooter}`;
+
+                case 'Ube':
+                    return `${svgHeader}
+                        <circle cx="100" cy="100" r="75" fill="#a855f7" stroke="#7e22ce" stroke-width="4"/>
+                        <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#7e22ce" stroke-width="4"/>
+                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 130 95 112 Q 75 128 55 108 Q 35 120 28 100 A 72 72 0 0 1 100 28 Z" fill="#c084fc" stroke="#a855f7" stroke-width="3"/>
+                        <ellipse cx="75" cy="50" rx="12" ry="5" fill="#ffffff" opacity="0.7" transform="rotate(-30 75 50)"/>
+                        <circle cx="120" cy="65" r="3" fill="#ffffff" opacity="0.8"/>
+                        <circle cx="65" cy="110" r="2.5" fill="#ffffff" opacity="0.8"/>
                     ${svgFooter}`;
 
                 case 'Chocolate':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#d97706" stroke="#b45309" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#b45309" stroke-width="4"/>
-                        <!-- Rich Dripping Chocolate Glaze -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 C 160 135 145 110 135 130 C 125 145 110 115 95 135 C 80 150 65 110 55 125 C 40 130 30 115 28 100 A 72 72 0 0 1 100 28 Z" fill="#451a03"/>
-                        <!-- Sprinkles -->
                         <rect x="75" y="48" width="12" height="4" rx="2" fill="#f43f5e" transform="rotate(15 75 48)"/>
                         <rect x="125" y="58" width="12" height="4" rx="2" fill="#fbbf24" transform="rotate(-25 125 58)"/>
                         <rect x="145" y="95" width="12" height="4" rx="2" fill="#38bdf8" transform="rotate(40 145 95)"/>
                         <rect x="58" y="90" width="12" height="4" rx="2" fill="#a855f7" transform="rotate(-35 58 90)"/>
                         <rect x="100" y="38" width="12" height="4" rx="2" fill="#34d399" transform="rotate(10 100 38)"/>
-                        <!-- Glossy Highlight -->
                         <path d="M 60 50 Q 100 25 140 50" stroke="#ffffff" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.3"/>
                     ${svgFooter}`;
 
                 case 'Strawberry':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Strawberry Pink Glaze -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 128 135 112 Q 115 132 95 110 Q 75 126 55 108 Q 35 122 28 100 A 72 72 0 0 1 100 28 Z" fill="#fb7185"/>
-                        <!-- Cute White Cream Drizzle Swirls -->
                         <path d="M 50 80 Q 75 40 110 45 T 150 75" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
                         <path d="M 60 110 Q 90 140 135 120" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
-                        <!-- Hearts Sprinkles -->
                         <path d="M70,55 A3,3 0 0,0 64,55 A3,3 0 0,0 58,55 Q58,61 64,66 Q70,61 70,55 Z" fill="#ffffff"/>
                         <path d="M140,65 A3,3 0 0,0 134,65 A3,3 0 0,0 128,65 Q128,71 134,76 Q140,71 140,65 Z" fill="#ffffff"/>
                     ${svgFooter}`;
 
                 case 'Chai Shai':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Spiced Chai Glaze -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 122 135 108 Q 115 125 95 110 Q 75 122 55 105 Q 35 115 28 100 A 72 72 0 0 1 100 28 Z" fill="#d97706"/>
-                        <!-- Cinnamon / Spice Swirl -->
                         <path d="M 60 70 Q 100 35 145 65 Q 155 110 110 125" fill="none" stroke="#78350f" stroke-width="4" stroke-linecap="round"/>
-                        <!-- Cute Star Anise Motif -->
                         <g transform="translate(130, 50) scale(0.6)">
                             <path d="M0 -15 L4 -4 L15 0 L4 4 L0 15 L-4 4 L-15 0 L-4 -4 Z" fill="#451a03"/>
                             <circle cx="0" cy="0" r="3" fill="#fef08a"/>
                         </g>
-                        <!-- Spice Dusting -->
                         <circle cx="70" cy="50" r="2" fill="#78350f"/><circle cx="85" cy="45" r="1.5" fill="#78350f"/><circle cx="120" cy="85" r="2" fill="#78350f"/>
                     ${svgFooter}`;
 
                 case 'Filter Coffee':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Coffee Glaze -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 112 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#78350f"/>
-                        <!-- Milky Foam Art Swirl -->
                         <path d="M 65 60 Q 100 30 135 60 Q 150 95 115 125" fill="none" stroke="#fef3c7" stroke-width="5" stroke-linecap="round"/>
-                        <!-- Cute Cartoon Coffee Beans -->
                         <g transform="translate(125, 45) rotate(20)">
                             <ellipse cx="0" cy="0" rx="9" ry="6" fill="#451a03"/>
                             <path d="M -6 0 Q 0 4 6 0" stroke="#fef3c7" stroke-width="2" fill="none"/>
@@ -504,12 +426,9 @@
 
                 case 'Coconut':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Creamy White Frosting -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 120 135 108 Q 115 125 95 108 Q 75 122 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
-                        <!-- Toasted Coconut Flakes -->
                         <rect x="70" y="45" width="12" height="5" rx="2.5" fill="#d97706" transform="rotate(15 70 45)"/>
                         <rect x="110" y="40" width="14" height="6" rx="3" fill="#f59e0b" transform="rotate(-40 110 40)"/>
                         <rect x="135" y="70" width="10" height="5" rx="2" fill="#b45309" transform="rotate(25 135 70)"/>
@@ -520,215 +439,89 @@
 
                 case 'Gulab Jamun':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Honey Rose Syrup Glaze -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#fbbf24" opacity="0.95"/>
-                        <!-- Plump Gulab Jamun Cartoon Balls -->
                         <circle cx="85" cy="55" r="15" fill="#78350f" stroke="#451a03" stroke-width="2"/>
                         <circle cx="125" cy="65" r="14" fill="#78350f" stroke="#451a03" stroke-width="2"/>
                         <circle cx="65" cy="90" r="13" fill="#78350f" stroke="#451a03" stroke-width="2"/>
-                        <!-- Shiny Highlights on Jamuns -->
                         <ellipse cx="80" cy="50" rx="4" ry="2" fill="#ffffff" opacity="0.7" transform="rotate(-30 80 50)"/>
                         <ellipse cx="120" cy="60" rx="4" ry="2" fill="#ffffff" opacity="0.7" transform="rotate(-30 120 60)"/>
-                        <!-- Pistachio Green Sparkles -->
                         <circle cx="105" cy="45" r="2.5" fill="#22c55e"/><circle cx="145" cy="90" r="2" fill="#22c55e"/><circle cx="95" cy="125" r="2.5" fill="#22c55e"/>
-                    ${svgFooter}`;
-
-                case 'Ksheera Palkova':
-                    return `${svgHeader}
-                        <!-- Base Dough -->
-                        <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
-                        <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Thick Condensed Milk Cream -->
-                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#fef3c7" stroke="#fde047" stroke-width="2"/>
-                        <!-- Golden Caramelized Specks & Milk Cream Droplets -->
-                        <path d="M 60 70 Q 95 30 140 60 Q 155 100 110 130" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round"/>
-                        <circle cx="75" cy="50" r="4" fill="#d97706"/>
-                        <circle cx="130" cy="50" r="3.5" fill="#d97706"/>
-                        <circle cx="145" cy="95" r="4" fill="#d97706"/>
-                        <circle cx="65" cy="100" r="3" fill="#d97706"/>
                     ${svgFooter}`;
 
                 case 'Rasmalai':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Saffron Yellow Frosting -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#fef08a"/>
-                        <!-- Cute Soft Rasmalai Discs -->
                         <ellipse cx="90" cy="55" rx="18" ry="12" fill="#ffffff" stroke="#fde047" stroke-width="3"/>
                         <ellipse cx="135" cy="80" rx="16" ry="10" fill="#ffffff" stroke="#fde047" stroke-width="3"/>
-                        <!-- Saffron Threads -->
                         <path d="M 85 50 Q 90 55 88 60" stroke="#dc2626" stroke-width="2" fill="none"/>
                         <path d="M 130 75 Q 135 80 133 85" stroke="#dc2626" stroke-width="2" fill="none"/>
-                        <!-- Pistachio Flakes -->
                         <circle cx="70" cy="65" r="3" fill="#15803d"/><circle cx="110" cy="45" r="2.5" fill="#15803d"/><circle cx="150" cy="100" r="3" fill="#15803d"/><circle cx="80" cy="115" r="3" fill="#15803d"/>
                     ${svgFooter}`;
 
                 case 'Red Velvet':
                     return `${svgHeader}
-                        <!-- Ruby Red Cake Base -->
                         <circle cx="100" cy="100" r="75" fill="#991b1b" stroke="#7f1d1d" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#7f1d1d" stroke-width="4"/>
-                        <!-- Cream Cheese Frosting Swirl -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
-                        <!-- Red Velvet Cake Crumb Sparkles -->
                         <circle cx="70" cy="50" r="3" fill="#dc2626"/><circle cx="120" cy="55" r="4" fill="#dc2626"/><circle cx="145" cy="90" r="3.5" fill="#dc2626"/><circle cx="60" cy="95" r="3" fill="#dc2626"/><circle cx="90" cy="125" r="4" fill="#dc2626"/><circle cx="125" cy="120" r="2.5" fill="#dc2626"/>
                     ${svgFooter}`;
 
-                case 'Pineapple Halwa':
+                case 'Mango':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Bright Pineapple Glaze -->
-                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#eab308"/>
-                        <!-- Cartoon Pineapple Slice Motif -->
-                        <g transform="translate(115, 55)">
-                            <circle cx="0" cy="0" r="16" fill="#facc15" stroke="#ca8a04" stroke-width="3"/>
-                            <circle cx="0" cy="0" r="6" fill="#eab308"/>
-                            <line x1="-12" y1="0" x2="12" y2="0" stroke="#ca8a04" stroke-width="1.5"/>
-                            <line x1="0" y1="-12" x2="0" y2="12" stroke="#ca8a04" stroke-width="1.5"/>
-                        </g>
-                        <!-- Golden Halwa Specks -->
-                        <circle cx="65" cy="70" r="3" fill="#ca8a04"/><circle cx="80" cy="45" r="2.5" fill="#ca8a04"/><circle cx="140" cy="100" r="3" fill="#ca8a04"/><circle cx="75" cy="115" r="3.5" fill="#ca8a04"/>
+                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#fb923c"/>
+                        <ellipse cx="120" cy="55" rx="14" ry="10" fill="#fde047" stroke="#e11d48" stroke-width="1.5" transform="rotate(-20 120 55)"/>
+                        <circle cx="70" cy="70" r="3.5" fill="#c2410c"/><circle cx="135" cy="105" r="3" fill="#c2410c"/><circle cx="85" cy="120" r="3" fill="#c2410c"/>
                     ${svgFooter}`;
 
                 case 'Paan Gulkand':
                     return `${svgHeader}
-                        <!-- Base Dough -->
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <!-- Vivid Leaf Green Paan Glaze -->
                         <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#16a34a"/>
-                        <!-- Rose Petal Gulkand Accents -->
                         <path d="M 80 50 Q 95 40 90 60 Q 75 65 80 50 Z" fill="#e11d48"/>
                         <path d="M 125 65 Q 140 55 135 75 Q 120 80 125 65 Z" fill="#e11d48"/>
                         <path d="M 60 90 Q 75 80 70 100 Q 55 105 60 90 Z" fill="#e11d48"/>
-                        <!-- Silver Edible Leaf Sparkles (Varki) -->
                         <polygon points="110,40 114,46 108,48" fill="#e2e8f0"/>
                         <polygon points="145,95 150,100 143,103" fill="#e2e8f0"/>
-                    ${svgFooter}`;
-
-                case 'Ube Malasada':
-                    return `${svgHeader}
-                        <!-- Fluffy Ube Sugar Doughnut (No Hole - Malasada Style) -->
-                        <circle cx="100" cy="100" r="75" fill="#9333ea" stroke="#6b21a8" stroke-width="4"/>
-                        <!-- Cream Filling Burst Center -->
-                        <circle cx="100" cy="100" r="22" fill="#c084fc" stroke="#a855f7" stroke-width="3"/>
-                        <!-- Vivid Purple Glaze / Sugar Coating Dusting -->
-                        <path d="M 40 80 Q 100 25 160 80 Q 100 135 40 80 Z" fill="#a855f7" opacity="0.6"/>
-                        <!-- Sparkling Sugar Crystals -->
-                        <circle cx="60" cy="60" r="2" fill="#ffffff"/><circle cx="140" cy="60" r="2.5" fill="#ffffff"/><circle cx="150" cy="110" r="2" fill="#ffffff"/><circle cx="50" cy="110" r="2.5" fill="#ffffff"/><circle cx="100" cy="45" r="3" fill="#ffffff"/><circle cx="100" cy="150" r="2" fill="#ffffff"/>
-                    ${svgFooter}`;
-
-                case 'Mango Custard':
-                    return `${svgHeader}
-                        <!-- Shell Doughnut (Filled Style) -->
-                        <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
-                        <!-- Mango Glaze Top -->
-                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#fbbf24"/>
-                        <!-- Creamy Mango Custard Center Fill -->
-                        <circle cx="100" cy="100" r="30" fill="#f59e0b" stroke="#b45309" stroke-width="3"/>
-                        <circle cx="100" cy="100" r="18" fill="#fef08a"/>
-                        <!-- Glossy Reflection -->
-                        <ellipse cx="92" cy="92" rx="6" ry="3" fill="#ffffff" opacity="0.8" transform="rotate(-30 92 92)"/>
-                    ${svgFooter}`;
-
-                case 'Chocolate Pudding':
-                    return `${svgHeader}
-                        <!-- Shell Doughnut (Filled Style) -->
-                        <circle cx="100" cy="100" r="75" fill="#d97706" stroke="#b45309" stroke-width="4"/>
-                        <!-- Dark Chocolate Glaze -->
-                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#451a03"/>
-                        <!-- Rich Chocolate Pudding Core Fill -->
-                        <circle cx="100" cy="100" r="30" fill="#78350f" stroke="#292524" stroke-width="3"/>
-                        <circle cx="100" cy="100" r="18" fill="#451a03"/>
-                        <!-- Cocoa Dusting & Gloss -->
-                        <ellipse cx="92" cy="92" rx="6" ry="3" fill="#ffffff" opacity="0.5" transform="rotate(-30 92 92)"/>
-                        <circle cx="65" cy="65" r="2" fill="#78350f"/><circle cx="135" cy="65" r="2" fill="#78350f"/>
-                    ${svgFooter}`;
-
-                case 'Boston Creme':
-                    return `${svgHeader}
-                        <!-- Shell Doughnut (Filled Style) -->
-                        <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
-                        <!-- Smooth Chocolate Coating Top -->
-                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#451a03"/>
-                        <!-- Bavarian Cream Center Peak -->
-                        <circle cx="100" cy="100" r="28" fill="#ffffff" stroke="#e2e8f0" stroke-width="3"/>
-                        <circle cx="100" cy="100" r="16" fill="#fef08a"/>
-                        <!-- Glossy Highlights -->
-                        <path d="M 55 55 Q 95 30 135 55" stroke="#ffffff" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.4"/>
-                    ${svgFooter}`;
-
-                case 'Jam filled':
-                    return `${svgHeader}
-                        <!-- Shell Doughnut (Filled Style) -->
-                        <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
-                        <!-- Powdered Sugar Dusting -->
-                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#f8fafc" opacity="0.85"/>
-                        <!-- Strawberry Jam Burst Core -->
-                        <circle cx="100" cy="100" r="26" fill="#e11d48" stroke="#be123c" stroke-width="3"/>
-                        <path d="M 100 100 Q 120 120 135 115 Q 125 135 110 125 Z" fill="#e11d48"/>
-                        <!-- Glossy Jam Highlight -->
-                        <ellipse cx="94" cy="94" rx="6" ry="3" fill="#ffffff" opacity="0.8" transform="rotate(-30 94 94)"/>
-                    ${svgFooter}`;
-
-                case 'Strawberry Cheesecake':
-                    return `${svgHeader}
-                        <!-- Shell Doughnut (Filled Style) -->
-                        <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
-                        <!-- Pink Strawberry Glaze -->
-                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 128 135 112 Q 115 132 95 110 Q 75 126 55 108 Q 35 122 28 100 A 72 72 0 0 1 100 28 Z" fill="#fb7185"/>
-                        <!-- Cream Cheese Swirl Center -->
-                        <circle cx="100" cy="100" r="26" fill="#ffffff" stroke="#f1f5f9" stroke-width="3"/>
-                        <path d="M 60 70 Q 100 35 140 70" stroke="#f43f5e" stroke-width="4" stroke-linecap="round" fill="none"/>
-                        <!-- Graham Cracker Crumble -->
-                        <circle cx="65" cy="55" r="2.5" fill="#d97706"/><circle cx="135" cy="55" r="3" fill="#d97706"/><circle cx="145" cy="95" r="2.5" fill="#d97706"/><circle cx="55" cy="95" r="3" fill="#d97706"/>
                     ${svgFooter}`;
 
                 default:
                     return `${svgHeader}
                         <circle cx="100" cy="100" r="75" fill="#f59e0b" stroke="#d97706" stroke-width="4"/>
                         <circle cx="100" cy="100" r="26" fill="#f8fafc" stroke="#d97706" stroke-width="4"/>
-                        <path d="M 100 28 A 72 72 0 0 1 172 100 Q 155 125 135 110 Q 115 128 95 110 Q 75 125 55 105 Q 35 118 28 100 A 72 72 0 0 1 100 28 Z" fill="#fb7185"/>
                     ${svgFooter}`;
             }
         }
 
+        // Package Data Definitions
         const packages = [
             { id: 'c6', name: 'Classic 6 pk', price: 20, size: '6 pk', type: 'Classic', desc: '6 pieces from our traditional Classic Indian fusion selection.' },
-            { id: 'c12', name: 'Classic 12 pk', price: 40, size: '12 pk', type: 'Classic', desc: '12 pieces of fluffy glazes including Chai Shai & Filter Coffee.' },
+            { id: 'c12', name: 'Classic 12 pk', price: 40, size: '12 pk', type: 'Classic', desc: '12 pieces of fluffy glazes including Chai Shai, Ube & Strawberry.' },
             { id: 's6', name: 'Signature 6 pk', price: 25, size: '6 pk', type: 'Signature', desc: '6 decadent signature pieces featuring Gulab Jamun & Rasmalai.' },
             { id: 's12', name: 'Signature 12 pk', price: 45, size: '12 pk', type: 'Signature', desc: '12 rich royal treat donuts for family gatherings.' },
-            { id: 'b6', name: 'Bingeworthy 6 pk', price: 30, size: '6 pk', type: 'Bingeworthy', desc: '6 ultra-stuffed artisanal specialties like Ube Malasada.' },
-            { id: 'b12', name: 'Bingeworthy 12 pk', price: 50, size: '12 pk', type: 'Bingeworthy', desc: '12 creamy filled bakery delights.' },
-            { id: 'u12', name: 'Ultimate Assortment 12 pk', price: 50, size: '12 pk', type: 'Ultimate', desc: 'Savor our best selling donuts combining Classic, Signature, and Bingeworthy flavors!' }
+            { id: 'u12', name: 'Ultimate Assortment 12 pk', price: 50, size: '12 pk', type: 'Ultimate', desc: 'Savor our best selling donuts combining Classic and Signature flavors!' }
         ];
 
+        // Flavor Menu Items Definitions
         const donutMenu = [
             { name: 'Classic', category: 'Classic', desc: 'Traditional golden fluffy glazed ring donut.' },
+            { name: 'Ube', category: 'Classic', desc: 'Sweet purple yam glaze with rich nutty vanilla notes.' },
             { name: 'Chocolate', category: 'Classic', desc: 'Rich chocolate glaze with sprinkles.' },
             { name: 'Strawberry', category: 'Classic', desc: 'Real strawberry glaze dusted with powdered sugar.' },
             { name: 'Chai Shai', category: 'Classic', desc: 'Infused with aromatic cardamoms, cinnamon and spiced tea.' },
-            { name: 'Filter Coffee', category: 'Classic', desc: 'Inspired by South Indian filter kaapi glaze.' },
             { name: 'Coconut', category: 'Classic', desc: 'Toasted coconut flakes over sweet coconut cream.' },
+            { name: 'Filter Coffee', category: 'Signature', desc: 'Inspired by South Indian filter kaapi glaze.' },
             { name: 'Gulab Jamun', category: 'Signature', desc: 'Rose syrup glaze crowned with soft gulab jamun sweet balls.' },
-            { name: 'Ksheera Palkova', category: 'Signature', desc: 'Caramelized condensed milk reduction cream.' },
             { name: 'Rasmalai', category: 'Signature', desc: 'Saffron cardamom cream topped with rasmalai discs & pistachios.' },
             { name: 'Red Velvet', category: 'Signature', desc: 'Decadent cocoa-infused red velvet ring with rich cream cheese glaze.' },
-            { name: 'Pineapple Halwa', category: 'Signature', desc: 'Warm pineapple halwa center with golden pineapple rings.' },
-            { name: 'Paan Gulkand', category: 'Signature', desc: 'Betel leaf extract with sweet preserved rose petals.' },
-            { name: 'Ube Malasada', category: 'Bingeworthy', desc: 'Hawaiian sugar donut filled with vivid purple ube cream filling.' },
-            { name: 'Mango Custard', category: 'Bingeworthy', desc: 'Soft donut packed with rich mango-infused silky custard filling.' },
-            { name: 'Chocolate Pudding', category: 'Bingeworthy', desc: 'Fluffy donut stuffed with dark fudge chocolate pudding filling.' },
-            { name: 'Boston Creme', category: 'Bingeworthy', desc: 'Classic donut packed with vanilla bean bavarian cream filling coated in dark chocolate.' },
-            { name: 'Jam filled', category: 'Bingeworthy', desc: 'Bursting with sweet, rich strawberry jam filling in every bite.' },
-            { name: 'Strawberry Cheesecake', category: 'Bingeworthy', desc: 'Filled with rich cream cheese filling, strawberry compote & graham crumble.' }
+            { name: 'Mango', category: 'Signature', desc: 'Alphonso mango glaze crowned with luscious fruit pieces.' },
+            { name: 'Paan Gulkand', category: 'Signature', desc: 'Betel leaf extract with sweet preserved rose petals.' }
         ];
 
         let cart = [];
@@ -736,6 +529,7 @@
         let selectedWeekendDate = null;
         let currentCalDate = new Date();
 
+        // Weekend Calendar Modal Handlers
         function openWeekendCalendarModal() {
             const modal = document.getElementById('weekendCalendarModal');
             if (modal) {
@@ -805,27 +599,7 @@
             updateCartUI();
         }
 
-        function showMessage(title, body, icon = 'fa-check', colorClass = 'text-emerald-600', bgClass = 'bg-emerald-100') {
-            const modal = document.getElementById('msgModal');
-            const titleEl = document.getElementById('msgTitle');
-            const bodyEl = document.getElementById('msgBody');
-            const iconEl = document.getElementById('msgIcon');
-            const iconContainer = document.getElementById('msgIconContainer');
-
-            if (modal && titleEl && bodyEl) {
-                titleEl.innerText = title;
-                bodyEl.innerText = body;
-                if (iconEl) iconEl.className = `fa-solid ${icon}`;
-                if (iconContainer) iconContainer.className = `w-14 h-14 rounded-full ${bgClass} flex items-center justify-center mx-auto mb-4 text-2xl ${colorClass}`;
-                modal.classList.remove('hidden');
-            }
-        }
-
-        function closeMsgModal() {
-            const modal = document.getElementById('msgModal');
-            if (modal) modal.classList.add('hidden');
-        }
-
+        // Floating Sprinkles Animation Logic
         function initSprinkles() {
             const canvas = document.getElementById('sprinklesCanvas');
             if (!canvas) return;
@@ -884,6 +658,7 @@
             animateSprinkles();
         }
 
+        // Pastel Background Switcher
         function setTheme(theme) {
             const overlay = document.getElementById('themeOverlay');
             if (!overlay) return;
@@ -894,6 +669,7 @@
             else if(theme === 'pastelPurple') overlay.classList.add('bg-gradient-to-br', 'from-purple-100', 'via-fuchsia-100', 'to-pink-100');
         }
 
+        // Render Packages UI
         function renderPackages() {
             const container = document.getElementById('packagesContainer');
             if(!container) return;
@@ -901,7 +677,7 @@
                 <div class="bg-white/80 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-white hover:shadow-md transition flex flex-col justify-between">
                     <div>
                         <div class="flex items-center justify-between mb-2">
-                            <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${p.type === 'Classic' ? 'bg-blue-100 text-blue-700' : p.type === 'Signature' ? 'bg-purple-100 text-purple-700' : p.type === 'Bingeworthy' ? 'bg-pink-100 text-pink-700' : 'bg-amber-100 text-amber-700'}">${p.size}</span>
+                            <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${p.type === 'Classic' ? 'bg-blue-100 text-blue-700' : p.type === 'Signature' ? 'bg-purple-100 text-purple-700' : 'bg-amber-100 text-amber-700'}">${p.size}</span>
                             <span class="text-2xl font-extrabold text-slate-900">$${p.price}</span>
                         </div>
                         <h3 class="text-xl font-serif font-bold text-slate-900 mb-1">${p.name}</h3>
@@ -915,6 +691,7 @@
             `).join('');
         }
 
+        // Render Flavor Grid UI
         function renderDonuts(category = 'all') {
             const grid = document.getElementById('donutGrid');
             if(!grid) return;
@@ -934,6 +711,7 @@
             `).join('');
         }
 
+        // Category Filter Action
         function filterCategory(cat) {
             document.querySelectorAll('.cat-btn').forEach(btn => {
                 btn.className = 'cat-btn px-5 py-2.5 rounded-xl font-medium text-sm transition text-slate-600 hover:text-slate-900 bg-white/80 border border-slate-200 cursor-pointer';
@@ -945,6 +723,7 @@
             renderDonuts(cat);
         }
 
+        // Cart State & Interactions
         function addToCart(packageId) {
             const pkg = packages.find(p => p.id === packageId);
             if (!pkg) return;
@@ -966,11 +745,6 @@
                 if (cart[itemIndex].qty <= 0) cart.splice(itemIndex, 1);
             }
             updateCartUI();
-        }
-
-        function submitPreorder() {
-            // Links directly to Google Form when clicked
-            return true;
         }
 
         function updateCartUI() {
@@ -1046,6 +820,16 @@
             }
         }
 
+        // Submit Preorder Handler
+        function submitPreorder() {
+            if (!selectedWeekendDate) {
+                // If no weekend date is selected, prompt selection
+                openWeekendCalendarModal();
+                return;
+            }
+            toggleCartModal(false);
+        }
+
         function toggleCartModal(show) {
             const modal = document.getElementById('cartModal');
             if(!modal) return;
@@ -1057,6 +841,13 @@
             }
         }
 
+        function handleCartBackdropClick(event) {
+            if (event.target.id === 'cartModal') {
+                toggleCartModal(false);
+            }
+        }
+
+        // Initialize on Window Load
         window.onload = function() {
             renderPackages();
             renderDonuts('all');
